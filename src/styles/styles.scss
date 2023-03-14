@@ -1,0 +1,249 @@
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('../assets/Fonts/Lato/Lato-Bold.ttf');
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato-Bold', sans-serif;
+}
+
+$colorBl: #0f3bff;
+$colorT: #2f1c6a;
+
+.colorT{
+    color: var(--bs-gray-900);
+}
+
+.m-0{
+    margin: 0;
+}
+.mt-1{
+    margin-top: 6px;
+}
+.mt-2{
+    margin-top: 12px;
+}
+.mt-3{
+    margin-top: 24px;
+}
+
+.ptb-2{
+    padding: 12px 0;
+    box-sizing: border-box;
+}
+
+.dropBtn{
+    border: none !important;
+}
+
+button.save{
+    color: #fff !important;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+
+    &:hover{
+        background-color: #449d44;
+        border-color: #398439;
+    }
+}
+
+.boxSh{
+    box-shadow: 0 1px 3px #00000026
+}
+
+
+@keyframes mover {
+    0%{
+        transform: translateX(-100px);
+    }
+    10%{
+        transform: translateX(100px);
+    }
+    20%{
+        transform: translateX(200px);
+    }
+    30%{
+        transform: translateX(300px);
+    }
+    40%{
+        transform: translateX(400px);
+    }
+    50%{
+        transform: translateX(500px);
+    }
+    60%{
+        transform: translateX(600px);
+    }
+    70%{
+        transform: translateX(700px);
+    }
+    80%{
+        transform: translateX(800px);
+    }
+    90%{
+        transform: translateX(900px);
+    }
+    100%{
+        transform: translateX(1100px);
+    }
+}
+
+@keyframes mobMover {
+    0%{
+        transform: translateX(-50px);
+    }
+    20%{
+        transform: translateX(0);
+    }
+    40%{
+        transform: translateX(25px);
+    }
+    60%{
+        transform: translateX(50px);
+    }
+    80%{
+        transform: translateX(75px);
+    }
+    100%{
+        transform: translateX(125px);
+    }
+}
+.mainHeaderContainer{
+    overflow: hidden;
+
+    .headerRight{
+        flex-direction: row !important;
+    }
+
+    .animatedTextContainer{
+    .movedT{
+        animation: mover 16s linear infinite;
+}
+}
+}
+
+.dashboardLayout{
+    overflow: hidden;
+
+    .headerRight{
+        flex-direction: row !important;
+    }
+
+    .animatedTextContainer{
+    .movedT{
+        animation: mover 16s linear infinite;
+}
+}
+}
+
+@media screen and (max-width: 480px) {
+    .animatedTextContainer{
+        .movedT{
+            animation: mobMover 6s linear infinite !important;
+        }
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    .dashboardLayout{
+        .header_top{
+            .container{
+                width: 1820px !important;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .ProductDatepicker{
+
+        .vuejs3-datepicker__calendar{
+            width: 240px !important;
+        }
+    }
+
+    .navContainer{
+        display: none;
+        overflow: hidden;
+    }
+
+    .mobileNavContainer{
+        display: block !important;
+        min-width: 120px;
+        width: 240px;
+        min-height: 100vh;
+        margin-top: 8px;
+        background: #f0f0e9;
+        transform-origin: left;
+        transition: 0.24s linear;
+        padding: 24px 0 12px 12px;
+        box-sizing: border-box;
+        position: fixed;
+            z-index: 999;
+            top: 80px;
+
+            &.deactive{
+                transform: scaleX(0);
+            }
+            &.active{
+                transform: scaleX(1);
+            }
+
+            ul{
+                padding: 0 !important;
+                display: flex;
+                flex-direction: column;
+                row-gap: 8px;
+
+                li{
+                    display: flex;
+                    align-items: center;
+                    column-gap: 8px;
+                }
+            }
+    }
+
+    .dashboardContent{
+        width: 100% !important;
+        margin-left: 0 !important;
+
+        &.active{
+            padding: 0 !important;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .header_top{
+        ul.headerRight{
+            margin: 0 !important;
+        }
+    }
+
+    .ProductDatepicker{
+        display: flex;
+        flex-direction: column;
+
+        .vuejs3-datepicker__calendar{
+            width: 240px !important;
+            position: static !important;
+        }
+    }
+
+    .newProductItems{
+        flex-direction: column;
+        height: fit-content;
+
+        .leftItems{
+            width: 100% !important;
+        }
+        .rightItems{
+            width: 100% !important;
+            margin-top: 12px;
+        }
+    }
+}
