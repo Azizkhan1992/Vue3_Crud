@@ -280,11 +280,11 @@ td.actionItems {
     flex-direction: row !important;
   }
 
-  .animatedTextContainer {
-    .movedT {
-      animation: mover 16s linear infinite;
-    }
-  }
+  // .animatedTextContainer {
+  //   .movedT {
+  //     animation: mover 16s linear infinite;
+  //   }
+  // }
 }
 
 .dashboardLayout {
@@ -294,19 +294,19 @@ td.actionItems {
     flex-direction: row !important;
   }
 
-  .animatedTextContainer {
-    .movedT {
-      animation: mover 16s linear infinite;
-    }
-  }
+  // .animatedTextContainer {
+  //   .movedT {
+  //     animation: mover 16s linear infinite;
+  //   }
+  // }
 }
 
 @media screen and (max-width: 480px) {
-  .animatedTextContainer {
-    .movedT {
-      animation: mobMover 6s linear infinite !important;
-    }
-  }
+  // .animatedTextContainer {
+  //   .movedT {
+  //     animation: mobMover 6s linear infinite !important;
+  //   }
+  // }
 }
 
 @media screen and (min-width: 1441px) {

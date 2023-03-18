@@ -3,9 +3,9 @@
 		<header id="header"><!--header-->
 			<div class="header_top"><!--header_top-->
 				<div class="container">
-					<div class="animatedTextContainer">
+					<!-- <div class="animatedTextContainer">
 						<h4 class="movedT">This is CRUD example</h4>
-					</div>
+					</div> -->
 				</div>
 			</div><!--/header_top-->
 

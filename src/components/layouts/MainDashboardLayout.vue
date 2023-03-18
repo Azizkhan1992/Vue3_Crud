@@ -13,9 +13,9 @@
                     <li v-if="isUser" class="userName"><i class="fa fa-user"></i><span>{{ user?.name }}</span></li>
                 </ul>
             </div>
-            <div class="animatedTextContainer">
+            <!-- <div class="animatedTextContainer">
                 <h4 class="movedT">This is CRUD example</h4>
-            </div>
+            </div> -->
 
 
         </div>
