@@ -1,10 +1,10 @@
 <template>
     <div class="mainLayout">
-        <MainHeaderLayout/>
+        <MainHeaderLayout />
 
-        <RouterView/>
+        <RouterView />
 
-        <MainFooterLayout/>
+        <MainFooterLayout />
     </div>
 </template>
 
@@ -14,6 +14,4 @@ import MainFooterLayout from './MainFooterLayout.vue';
 
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

@@ -2,11 +2,11 @@
     <div class="breadcrumbsContainer">
         <div class="breadcrumbsWrapper">
             <h5>
-                <router-link to="/dashboard/dashboard-home">Dashboard</router-link>
+                <router-link class="colorT" to="/dashboard/dashboard-home">Dashboard</router-link>
             </h5>
             /
             <h5 v-if="item_two">
-            <router-link :to="`/dashboard/${route_val}`">{{ item_one }}</router-link>
+                <router-link class="colorT" :to="`/dashboard/${route_val}`">{{ item_one }}</router-link>
             </h5>
             <h5 v-else>{{ item_one }}</h5>
             <p v-if="item_two" class="m-0">/</p>
@@ -35,9 +35,9 @@ defineProps({
 </script>
 
 <style lang="scss">
-.breadcrumbsContainer{
+.breadcrumbsContainer {
 
-    .breadcrumbsWrapper{
+    .breadcrumbsWrapper {
         display: flex;
         align-items: center;
         column-gap: 4px;

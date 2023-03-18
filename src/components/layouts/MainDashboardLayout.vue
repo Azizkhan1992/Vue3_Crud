@@ -2,24 +2,22 @@
     <div class="dashboardLayout">
         <div class="header_top">
             <div class="col-sm-12">
-                    <div class="logo pull-left">
-                            <Icon icon="ph:list-light" width="32" height="32" class="toggleIcon" 
-                            @click="changeToggle"
-                            />
-							<a href="/"><img src="../../assets/logo.png" alt="" /></a>
-						</div>
-					</div>
-                    <div class="shop-menu pull-right">
-                    <ul class="nav navbar-nav headerRight">
-                <li class="logOut" v-if="isUser" @click="logOut">Logout</li>
-                <li v-if="isUser" class="userName"><i class="fa fa-user"></i><span>{{ user?.name }}</span></li>
+                <div class="logo pull-left">
+                    <Icon icon="ph:list-light" width="32" height="32" class="toggleIcon" @click="changeToggle" />
+                    <a href="/"><img src="../../assets/logo.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="shop-menu pull-right">
+                <ul class="nav navbar-nav headerRight">
+                    <li class="logOut" v-if="isUser" @click="logOut">Logout</li>
+                    <li v-if="isUser" class="userName"><i class="fa fa-user"></i><span>{{ user?.name }}</span></li>
                 </ul>
-                </div>
-                <div class="animatedTextContainer">
-                    <h4 class="movedT">This is CRUD example</h4>
-                </div>
+            </div>
+            <div class="animatedTextContainer">
+                <h4 class="movedT">This is CRUD example</h4>
+            </div>
 
-            
+
         </div>
 
         <div class="dashboardWrapper">
@@ -28,27 +26,27 @@
                     <ul>
                         <li class="dashLink">
                             <Icon icon="clarity:dashboard-solid" width="24" height="24" />
-                            <router-link to="/dashboard/dashboard-home">Dashboard</router-link>
+                            <router-link class="colorT" to="/dashboard/dashboard-home">Dashboard</router-link>
                         </li>
-                        
+
                         <li class="dashLink">
                             <Icon icon="gridicons:product-downloadable" width="24" height="24" />
-                            <router-link to="/dashboard/products">Products</router-link>
+                            <router-link class="colorT" to="/dashboard/products">Products</router-link>
                         </li>
-                        
+
                         <li class="dashLink">
                             <Icon icon="carbon:category" width="24" height="24" />
-                            <router-link to="/dashboard/categories">Categories</router-link>
+                            <router-link class="colorT" to="/dashboard/categories">Categories</router-link>
                         </li>
                         <li class="dashLink">
                             <Icon icon="ic:baseline-person-outline" width="24" height="24" />
-                            <router-link to="/dashboard/customers">Customers</router-link>
+                            <router-link class="colorT" to="/dashboard/customers">Customers</router-link>
                         </li>
                         <li class="dashLink">
                             <Icon icon="material-symbols:shopping-cart-outline" width="24" height="24" />
-                            <router-link to="/dashboard/orders">Orders</router-link>
+                            <router-link class="colorT" to="/dashboard/orders">Orders</router-link>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
@@ -77,7 +75,7 @@
             </div>
 
             <div class="dashboardContent" :class="isToggle ? 'deactive' : 'active'">
-                <RouterView/>
+                <RouterView />
             </div>
         </div>
     </div>
@@ -90,7 +88,7 @@ import router from '../../router';
 import store from '../../store';
 
 onMounted(() => {
-	getUser()
+    getUser()
 })
 
 let isToggle = computed(() => {
@@ -107,31 +105,31 @@ let user = reactive({})
 const users = store.state.users
 
 const getUser = () => {
-	if(JSON.parse(sessionStorage.getItem('user'))){
-		user = JSON.parse(sessionStorage.getItem('user'))
-		isUser.value = true
-	} else {
-		isUser.value = false
-	}
+    if (JSON.parse(sessionStorage.getItem('user'))) {
+        user = JSON.parse(sessionStorage.getItem('user'))
+        isUser.value = true
+    } else {
+        isUser.value = false
+    }
 }
 
-function logOut(){
-	window.sessionStorage.removeItem('user')
-	isUser.value = false
-    router.push({path: '/'})
+function logOut() {
+    window.sessionStorage.removeItem('user')
+    isUser.value = false
+    router.push({ path: '/' })
 }
 
 
 watch(users, (newUser) => {
-	if(newUser){
-		getUser()
-	}
+    if (newUser) {
+        getUser()
+    }
 })
 </script>
 
 <style lang="scss">
-.dashboardLayout{
-    .header_top{
+.dashboardLayout {
+    .header_top {
         height: 80px;
         padding: 8px 0;
         box-sizing: border-box;
@@ -140,47 +138,47 @@ watch(users, (newUser) => {
         z-index: 1999;
     }
 
-    .logo{
+    .logo {
         display: flex;
         align-items: center;
         column-gap: 12px;
 
-        .toggleIcon{
+        .toggleIcon {
             padding-top: 4px;
             box-sizing: border-box;
             cursor: pointer;
         }
     }
 
-    .dashboardWrapper{
+    .dashboardWrapper {
         display: flex;
         justify-content: space-between;
 
-        .dashboardContent{
+        .dashboardContent {
             width: calc(100% - 260px);
             transition: 0.24s linear;
             margin-top: 100px;
             box-sizing: border-box;
 
-            &.active{
+            &.active {
                 width: 100%;
                 position: absolute;
                 right: 0;
                 padding: 0 0 12px 12px;
             }
 
-            &.deactive{
+            &.deactive {
                 padding: 0 0 12px 0;
                 margin-left: 250px;
             }
         }
     }
 
-    .mobileNavContainer{
+    .mobileNavContainer {
         display: none;
     }
 
-    .navContainer{
+    .navContainer {
         min-width: 120px;
         width: 240px;
         min-height: 100vh;
@@ -191,54 +189,56 @@ watch(users, (newUser) => {
         padding: 24px 0 12px 12px;
         box-sizing: border-box;
         position: fixed;
-            z-index: 999;
-            top: 80px;
+        z-index: 999;
+        top: 80px;
 
-        &.deactive{
+        &.deactive {
             transform: scaleX(0);
         }
 
-        &.active{
+        &.active {
             transform: scaleX(1);
-            
+
         }
 
-        ul{
+        ul {
             padding: 0;
 
-            li.dashLink{
-            display: flex;
-            align-items: center;
-            column-gap: 12px;
-            margin-top: 12px;
-        }
+            li.dashLink {
+                display: flex;
+                align-items: center;
+                column-gap: 12px;
+                margin-top: 12px;
+            }
         }
     }
 
-    .col-sm-4{
+    .col-sm-4 {
         padding: 4px;
         box-sizing: border-box;
     }
-    .animatedTextContainer{
+
+    .animatedTextContainer {
         margin-top: 18px;
     }
 }
-li.userName{
-	display: flex !important;
-	align-items: center;
-	padding: 0 !important;
-	column-gap: 4px;
-	margin-top: 10px;
+
+li.userName {
+    display: flex !important;
+    align-items: center;
+    padding: 0 !important;
+    column-gap: 4px;
+    margin-top: 10px;
 }
 
-li.logOut{
-	margin-top: 10px;
-	padding: 0 !important;
-	margin-right: 12px;
-	cursor: pointer;
+li.logOut {
+    margin-top: 10px;
+    padding: 0 !important;
+    margin-right: 12px;
+    cursor: pointer;
 }
 
-.shop-menu{
+.shop-menu {
     position: absolute;
     background: #f0f0e9;
     padding: 0 12px;
@@ -249,24 +249,25 @@ li.logOut{
 }
 
 @media screen and (max-width: 480px) {
-    .container{
+    .container {
         height: 60px !important;
     }
-    .logo{
+
+    .logo {
         width: 50% !important;
     }
 
-    .shop-menu{
+    .shop-menu {
         right: 40px !important;
         top: 0 !important;
 
-        ul{
+        ul {
             display: flex !important;
         }
     }
 
-    .animatedTextContainer{
-        h4.movedT{
+    .animatedTextContainer {
+        h4.movedT {
             font-size: 1rem !important;
         }
     }
@@ -285,5 +286,4 @@ li.logOut{
 //         width: calc(100% - 360px) !important;
 //     }
 // }
-
 </style>

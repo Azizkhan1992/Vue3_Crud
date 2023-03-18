@@ -12,8 +12,8 @@
 </script>
 
 <style lang="scss">
-.dashboardContainer{
-    img{
+.dashboardContainer {
+    img {
         width: 100%;
         object-fit: cover;
     }

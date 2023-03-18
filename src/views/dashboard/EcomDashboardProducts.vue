@@ -7,7 +7,7 @@
                     <router-link to="products/new">Add new Product</router-link>
                 </button>
             </div>
-            <table class="productTable">
+            <table class="Table">
                 <thead>
                     <tr>
                         <th colspan="5">
@@ -43,7 +43,7 @@
                     </tr>
 
                     <tr class="pagination">
-                        <Pagination/>
+                        <Pagination />
                     </tr>
                 </tbody>
             </table>
@@ -95,7 +95,7 @@ const products = store.state.products
         }
     }
 
-    .productTable {
+    .Table {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -120,7 +120,7 @@ const products = store.state.products
                     align-items: center;
                     justify-content: flex-end;
 
-                    nav{
+                    nav {
                         display: flex;
                         align-items: center;
                         margin-top: 12px;
@@ -132,7 +132,7 @@ const products = store.state.products
                         li {
                             a {
 
-                                span{
+                                span {
                                     padding: 0 !important;
                                     background: transparent;
                                 }

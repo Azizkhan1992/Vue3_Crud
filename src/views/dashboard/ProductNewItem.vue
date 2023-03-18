@@ -4,11 +4,11 @@
             <Breadcrumbs item_one="Products" :item_two="title" route_val="products" />
             <div class="productTitle">
                 <h3 v-if="checker == true">New Product</h3>
-            <h3 v-else>Edit Product</h3>
+                <h3 v-else>Edit Product</h3>
 
-            <button class="btn btn-fefault cart">
-                Save
-            </button>
+                <button class="btn btn-fefault cart">
+                    Save
+                </button>
             </div>
 
 
@@ -17,7 +17,8 @@
                     <h3>Basics</h3>
                     <div class="form-group">
                         <label for="exampleName">Product name</label>
-                        <input type="text" class="form-control" id="exampleName" placeholder="Product name" :value="singleProduct.name">
+                        <input type="text" class="form-control" id="exampleName" placeholder="Product name"
+                            :value="singleProduct.name">
                     </div>
 
                     <label for="basic-url">Slug</label>
@@ -44,7 +45,8 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputP1">Old Price</label>
-                            <input type="number" class="form-control" id="exampleInputP1" placeholder="Old Price" :value="singleProduct.price">
+                            <input type="number" class="form-control" id="exampleInputP1" placeholder="Old Price"
+                                :value="singleProduct.price">
                         </div>
                     </div>
 
@@ -63,10 +65,10 @@
                     <div class="uploadImage">
                         <div class="imageForm">
                             <h3>Images</h3>
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image input</label>
-                            <input type="file" id="exampleInputFile">
-                        </div>
+                            <div class="form-group">
+                                <label for="exampleInputFile">Image input</label>
+                                <input type="file" id="exampleInputFile">
+                            </div>
                         </div>
 
                         <img v-if="singleProduct.image" :src="imageUrl(singleProduct.image)" :alt="singleProduct.image" />
@@ -77,32 +79,32 @@
                     <div class="visibilityProduct">
                         <h3>Visibility</h3>
                         <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                            Published
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                            Scheduled
-                        </label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
-                            Hidden
-                        </label>
-                    </div>
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                Published
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Scheduled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                Hidden
+                            </label>
+                        </div>
                     </div>
 
                     <div class="ProductDatepicker mt-3">
                         <label for="pick">Publish date</label>
-                    <Datepicker :value="state.date" id="pick"/>
-                </div>
+                        <Datepicker :value="state.date" id="pick" />
+                    </div>
                 </div>
 
-                
+
             </div>
         </div>
     </div>
@@ -154,8 +156,8 @@ const routeChecker = () => {
 }
 
 const getSingleProduct = (key) => {
-    products.forEach(elem =>{
-        if(elem.id == key.value){
+    products.forEach(elem => {
+        if (elem.id == key.value) {
             singleProduct = elem
         }
     })
@@ -173,11 +175,17 @@ const getSingleProduct = (key) => {
     .col-sm-12 {
         float: none !important;
 
-        .uploadImage{
+        .uploadImage {
             display: flex;
+            justify-content: space-between;
+
+            img {
+                width: 120px;
+                object-fit: contain;
+            }
         }
 
-        .productTitle{
+        .productTitle {
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -188,11 +196,17 @@ const getSingleProduct = (key) => {
             margin-top: 24px;
             justify-content: space-between;
 
-            .rightItems{
-                width: 300px;   
+            .rightItems {
+                width: 300px;
                 padding: 12px;
                 border-radius: 4px;
                 box-sizing: border-box;
+
+                .ProductDatepicker {
+                    .vuejs3-datepicker__calendar {
+                        width: 260px;
+                    }
+                }
             }
 
 

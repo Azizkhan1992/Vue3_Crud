@@ -1,7 +1,7 @@
 <template>
   <main>
-    <HomeCarousel/>
-    <HomeContent/>
+    <HomeCarousel />
+    <HomeContent />
   </main>
 </template>
 
