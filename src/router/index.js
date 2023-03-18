@@ -95,6 +95,11 @@ const router = createRouter({
       name: "admin-login",
       component: () => import("../views/dashboard/EcomLoginPage.vue"),
     },
+    {    
+      path: '/:pathMatch(.*)*',                                                                                                                                                        
+      name: 'error404',                                                                                                                                                                                      
+      component: () => import('../views/Error404.vue')                                                                                                                                                              
+    }
   ],
 });
 
